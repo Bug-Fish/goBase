@@ -98,7 +98,7 @@ func main() {
 	fmt.Println(v1)
 	fmt.Println(v2)
 
-	chick := Chicken{}
+	chick := Chicken{"female"}
 	var duck Duck
 	duck = chick
 	duck.DuckGo()
@@ -194,13 +194,14 @@ type Duck interface {
 }
 
 type Chicken struct {
+	sex string
 }
 
 func (c Chicken) Quack() {
-	fmt.Println("gagaga")
+	fmt.Println("gagaga " + c.sex)
 }
 func (c Chicken) DuckGo() {
-	fmt.Println("gogogogo")
+	fmt.Println("gogogogo " + c.sex)
 }
 
 func f(msg string) {
